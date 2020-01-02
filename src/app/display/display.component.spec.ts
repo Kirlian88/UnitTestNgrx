@@ -19,6 +19,9 @@ describe('DisplayComponent', () => {
         return of([{ name: 'water', price: '120000' },
         { name: 'coil', price: '85000' }]
     );
+    },
+    setState() {
+      return of(x => x.blockchain)
     }
 };
 
@@ -53,8 +56,7 @@ describe('DisplayComponent', () => {
   });
 
   it('should dispatch the select scenario action', () => {
-    storeMock.select();
-    expect(storeMock.select);
+    storeMock.setState();
+    expect(storeMock.setState);
 }); 
-
 });
